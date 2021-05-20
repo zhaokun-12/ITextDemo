@@ -1,0 +1,194 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: yezi
+ * @Date: 2021-05-17 15:42:12
+ * @LastEditTime: 2021-05-19 15:06:29
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+<!--    <meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <title>Document</title>
+    <style type="text/css">
+        @page{size:a4}
+        *{
+            font-family:SimSun;
+        }
+        .templateWarp {
+            width: 1000px;
+            margin: 0px auto;
+        }
+        .header {
+            height: 100px;
+            background-color: grey;
+        }
+        .logoBox {
+            display: inline-block;
+            margin-top: 15px;
+            margin-left: 50px;
+            height: 70px;
+        }
+        img {
+            height: 70px;
+        }
+        .sign {
+            display: inline-block;
+            vertical-align: bottom;
+        }
+        .title {
+            height: 50px;
+            text-align: center;
+        }
+        .report {
+            border-bottom: solid 1px grey;
+            padding-bottom: 30px;
+        }
+        .table {
+            margin-top: 20px;
+            width: 1000px;
+            border-top: 1px solid #999;
+            border-left: 1px solid #999;
+            border-spacing: 0;/*去掉单元格间隙*/
+        }
+        .table td{
+            padding: 5px 10px;
+            width: 1000px;
+            border-bottom: 1px solid #999;
+            border-right: 1px solid #999;
+        }
+        .otherInfo {
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="templateWarp">
+        <div class="header">
+            <div class="logoBox">
+                <img src="" alt=""/>
+                <div class="sign">
+                    【管理人全称】
+                </div>
+            </div>
+        </div>
+        <div class="title">
+            <h2>基金产品份额确认书</h2>
+        </div>
+        <div class="message">
+            <div>
+                尊敬的【客户名称】
+                您好，感谢您认/申购【产品全称】，您的认/申购资金已划入基金托管户，基金管理人与基金托管人现将该认购资金按基金合同约定，确认您认购的份额如下：
+            </div>
+        </div>
+        <div class="report">
+            <table class="table">
+                <tr>
+                    <td colspan="4" style="text-align: center;"><strong>认/申购基本信息</strong></td>
+                </tr>
+                <tr>
+                    <td>产品名称</td>
+                    <td colspan="3">【产品全称】</td>
+                </tr>
+                <tr>
+                    <td>基金份额持有人姓名</td>
+                    <td colspan="3">【客户姓名】</td>
+                </tr>
+                <tr>
+                    <td>基金份额持有人证件类型</td>
+                    <td colspan="3">【客户证件类型】</td>
+                </tr>
+                <tr>
+                    <td>基金份额持有人证件号码</td>
+                    <td colspan="3">【客户证件号码】</td>
+                </tr>
+                <tr>
+                    <td rowspan="3">受益账户</td>
+                    <td>账户名</td>
+                    <td colspan="2">【银行户名】</td>
+                </tr>
+                <tr>
+                    <td>开户行</td>
+                    <td colspan="2">【开户行全称】</td>
+                </tr>
+                <tr>
+                    <td>账号</td>
+                    <td colspan="2">【银行卡号】</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">确认金额</td>
+                    <td>（大写）</td>
+                    <td>人民币</td>
+                    <td>【确认金额大写】</td>
+                </tr>
+                <tr>
+                    <td>（大写）</td>
+                    <td>¥</td>
+                    <td>【确认金额小写】</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">交易费用</td>
+                    <td>（大写）</td>
+                    <td>人民币</td>
+                    <td>【交易费用大写】</td>
+                </tr>
+                <tr>
+                    <td>（大写）</td>
+                    <td>¥</td>
+                    <td>【交易费用小写-】</td>
+                </tr>
+                <tr>
+                    <td colspan="3">申请日期</td>
+                    <td>【申请日期】</td>
+                </tr>
+                <tr>
+                    <td colspan="3">交易净值</td>
+                    <td>【交易净值】</td>
+                </tr>
+                <tr>
+                    <td colspan="3">确认份额（份）</td>
+                    <td>【确认份额】</td>
+                </tr>
+                <tr>
+                    <td colspan="3">现持有的份数总和（份）</td>
+                    <td>【最新份额】</td>
+                </tr>
+                <tr>
+                    <td colspan="4" style="text-align: center;"><strong>投资者联系信息</strong></td>
+                </tr>
+                <tr>
+                    <td>地址</td>
+                    <td colspan="3">【最新份额】</td>
+                </tr>
+                <tr>
+                    <td>联系人</td>
+                    <td>【客户名称】</td>
+                    <td>联系电话</td>
+                    <td>【登录手机号码】</td>
+                </tr>
+                <tr>
+                    <td>电子邮箱</td>
+                    <td colspan="3">【联系邮箱】</td>
+                </tr>
+            </table>
+            <p>专此确认。</p>
+            <p style="text-align: end;line-height: 20px;">【管理人名称】</p>
+            <p style="text-align: end;line-height: 20px;">（盖章）</p>
+            <p style="text-align: end;line-height: 20px;">【生成日期】</p>
+        </div>
+        <div class="otherInfo">
+            <div style="display: flex; justify-content: space-between; line-height: 35px;">
+                <div>公司联系电话：<span>【公司联系电话】</span></div>
+                <div>传真：<span>【传真】</span></div>
+                <div>网址：<span>【公司网址】</span></div>
+            </div>
+            <div style="display: flex; justify-content: space-between; line-height: 35px;">
+                <div>公司地址：<span>【公司地址】</span></div>
+                <div>邮箱：<span>【公司联系邮箱】</span></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

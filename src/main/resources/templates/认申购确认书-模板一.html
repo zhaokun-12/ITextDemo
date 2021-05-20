@@ -1,0 +1,201 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: yezi
+ * @Date: 2021-05-17 15:42:12
+ * @LastEditTime: 2021-05-17 17:21:01
+-->
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+<!--    <meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <title>认申购确认书-模板一</title>
+    <style type="text/css">
+        *{
+            font-family:SimSun;
+        }
+        .templateWarp {
+            width: 620px;
+            margin: 0px auto;
+        }
+        .header {
+            height: 100px;
+            background-color: grey;
+        }
+        .logoBox {
+            display: inline-block;
+            margin-top: 15px;
+            margin-left: 50px;
+            height: 70px;
+        }
+        img {
+            height: 70px;
+        }
+        .sign {
+            display: inline-block;
+            vertical-align: bottom;
+        }
+        .title {
+            height: 50px;
+            text-align: center;
+        }
+        .report {
+            border-bottom: solid 1px grey;
+            padding-bottom: 30px;
+        }
+        .table {
+            margin-top: 20px;
+            width: 620px;
+            border-top: 1px solid #999;
+            border-left: 1px solid #999;
+            border-spacing: 0;/*去掉单元格间隙*/
+        }
+        .table td{
+            padding: 5px 10px;
+            width: 620px;
+            border-bottom: 1px solid #999;
+            border-right: 1px solid #999;
+        }
+        .otherInfo {
+            font-size: 12px;
+        }
+        .pClass {
+            text-align: end;
+            line-height: 20px;
+        }
+        .copy {
+            display: flex;
+            justify-content: space-between;
+            line-height: 35px;
+        }
+    </style>
+</head>
+<body>
+    <div class="templateWarp">
+        <div class="header" th:style="'background:'+${headerBgColor}">
+            <div class="logoBox">
+                <img th:src="${logoImg}" alt=""/>
+                <div class="sign">
+                    <span th:style="'color:'+${headerTextColor}" th:text="${managerUserName}"></span>
+                </div>
+            </div>
+        </div>
+        <div class="title">
+            <h2 th:text="${title}">基金产品份额确认书</h2>
+        </div>
+        <div class="message">
+            <div th:utext="${summary}">
+            </div>
+        </div>
+        <div class="report">
+            <table class="table">
+                <tr>
+                    <td colspan="4" style="text-align: center;"><strong>认/申购基本信息</strong></td>
+                </tr>
+                <tr>
+                    <td>产品名称</td>
+                    <td colspan="3"><span th:text="${productFullName}"></span></td>
+                </tr>
+                <tr>
+                    <td>基金份额持有人姓名</td>
+                    <td colspan="3"><span th:text="${customerName}"></span></td>
+                </tr>
+                <tr>
+                    <td>基金份额持有人证件类型</td>
+                    <td colspan="3"><span th:text="${cardTypeText}"></span></td>
+                </tr>
+                <tr>
+                    <td>基金份额持有人证件号码</td>
+                    <td colspan="3"><span th:text="${cardNumber}"></span></td>
+                </tr>
+                <tr>
+                    <td rowspan="3">受益账户</td>
+                    <td>账户名</td>
+                    <td colspan="2"><span th:text="${accountName}"></span></td>
+                </tr>
+                <tr>
+                    <td>开户行</td>
+                    <td colspan="2"><span th:text="${subbranch}"></span></td>
+                </tr>
+                <tr>
+                    <td>账号</td>
+                    <td colspan="2"><span th:text="${accountNumber}"></span></td>
+                </tr>
+                <tr>
+                    <td rowspan="2">确认金额</td>
+                    <td>（大写）</td>
+                    <td>人民币</td>
+                    <td><span th:text="${tradeMoneyUpper}"></span></td>
+                </tr>
+                <tr>
+                    <td>（小写）</td>
+                    <td>¥</td>
+                    <td><span th:text="${tradeMoney}"></span></td>
+                </tr>
+                <tr>
+                    <td rowspan="2">交易费用</td>
+                    <td>（大写）</td>
+                    <td>人民币</td>
+                    <td><span th:text="${tradeFareUpper}"></span></td>
+                </tr>
+                <tr>
+                    <td>（小写）</td>
+                    <td>¥</td>
+                    <td><span th:text="${tradeFare}"></span></td>
+                </tr>
+                <tr>
+                    <td colspan="3">申请日期</td>
+                    <td><span th:text="${tradeApplyTime}"></span></td>
+                </tr>
+                <tr>
+                    <td colspan="3">交易净值</td>
+                    <td><span th:text="${tradeNetValue}"></span></td>
+                </tr>
+                <tr>
+                    <td colspan="3">确认份额（份）</td>
+                    <td><span th:text="${tradeShare}"></span></td>
+                </tr>
+                <tr>
+                    <td colspan="3">现持有的份数总和（份）</td>
+                    <td><span th:text="${remainShare}"></span></td>
+                </tr>
+                <tr>
+                    <td colspan="4" style="text-align: center;"><strong>投资者联系信息</strong></td>
+                </tr>
+                <tr>
+                    <td>地址</td>
+                    <td colspan="3"><span th:text="${address}"></span></td>
+                </tr>
+                <tr>
+                    <td>联系人</td>
+                    <td><span th:text="${customerName}"></span></td>
+                    <td>联系电话</td>
+                    <td><span th:text="${mobile}"></span></td>
+                </tr>
+                <tr>
+                    <td>电子邮箱</td>
+                    <td colspan="3"><span th:text="${email}"></span></td>
+                </tr>
+            </table>
+            <p>专此确认。</p>
+                <p class="pClass"><span th:text="${managerUserName}"></span></p>
+                <p class="pClass">（盖章）</p>
+                <p class="pClass"><span th:text="${current}"></span></p>
+
+        </div>
+        <div class="otherInfo">
+            <div class="copy">
+                <div style="display: inline-block" >公司联系电话：<span th:text="${phone}">【公司联系电话】</span></div>
+                <div >传真：<span th:text="${faxes}">【传真】</span></div>
+                <div >网址：<span th:text="${companyUrl}">【公司网址】</span></div>
+            </div>
+            <div class="copy">
+                <div>公司地址：<span th:text="${companyAddress}">【公司地址】</span></div>
+                <div  >邮箱：<span th:text="${companyEmail}">【公司联系邮箱】</span></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

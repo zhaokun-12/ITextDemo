@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>私募基金投资者风险测评问卷</title>
+    <style>
+        * {
+            /* margin: 0;
+            padding: 0; */
+            font-family:SimSun;
+            list-style: none;
+        }
+
+        body {
+            padding-bottom: 100px;
+        }
+
+        .title {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .confirm {
+            text-indent: 2em;
+            /*color: red*/
+        }
+
+        .seal {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3 class="title">私募基金投资者风险测评问卷</h3>
+    <h4 class="title">（个人版）</h4>
+    <div class="confirm">
+        <div>
+            <p>投资者姓名：<span th:text="${customerName}"></span><span></span></p>
+            <p>填写日期：<span th:text="${date}"></span><span></span></p>
+        </div>
+        <div>
+            本人保证资金来源的合法性和所提供资料的真实性、有效性、准确性、完整性，并对其承担责任。
+        </div>
+        <br />
+        <div>
+            本人知悉并同意以下内容：
+            <br />
+            <div th:text="${content}"></div>
+        </div>
+    </div>
+    <br />
+    <div class="stl_01"><span style="word-spacing:0em;"><span th:text="${sureJson.titleText}"></span> </span></div>
+    <div th:each="node,userStat:${sureJson.options}">
+        <div class="stl_02,stl_11"><span class="stl_11" th:if="${node.check} == true">【√】</span><span th:text="${userStat.count}"></span>、 <span th:text="${node.optionText}">{{node.optionText}}</span> </div>
+    </div>
+    <div th:each="node,userStat:${scoreJson}">
+        <div class="stl_01"><span class="stl_11" style="word-spacing:0em;"><span th:text="${node.titleText}"></span> </span></div>
+        <div th:each="node,userStat:${node.options}">
+            <div class="stl_02,stl_11"><span class="stl_11" th:if="${node.check} == true">【√】</span><span th:text="${userStat.count}"></span>、 <span th:text="${node.optionText}">{{node.optionText}}</span> </div>
+        </div>
+    </div>
+
+    <p>本人已如实填写，并了解了自己的风险承受类型和适合购买的产品类型。</p>
+    <p class="seal">
+        <span>
+            投资者签章：
+        </span> <br />
+        <span>
+            日期：
+        </span>
+    </p>
+    <br />
+    <p class="seal">
+        <span>
+            募集机构签章：
+        </span> <br />
+        <span>
+            日期：
+        </span>
+    </p>
+    <br />
+    <br />
+    <h3 class="title seal ">投资者风险测评结果确认书</h3>
+    <div class="confirm">
+        <div th:text="${bookContent}"></div>
+    </div>
+    <p class="seal">
+        <span>
+            投资者签章：
+        </span> <br />
+        <span>
+            日期：
+        </span>
+    </p>
+    <br />
+    <p class="seal">
+        <span>
+            募集机构签章：
+        </span> <br />
+        <span>
+            日期：
+        </span>
+    </p>
+</body>
+
+</html>
